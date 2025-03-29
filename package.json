@@ -1,31 +1,33 @@
 {
   "name": "react-tablenex",
-  "version": "1.5.0",
-  "description": "A modern, customizable React table component built with TypeScript, featuring responsive design, fixed columns, and expandable rows.",
-  "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "version": "1.6.0",
+  "description": "A React component library",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
     },
     "./dist/style.css": {
       "import": "./dist/style.css",
       "require": "./dist/style.css"
     }
   },
-  "files": [
-    "dist"
-  ],
   "scripts": {
-    "dev": "vite build --watch",
-    "build": "vite build",
-    "test": "vitest",
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsup && npx cpy \"src/**/*.css\" dist",
+    "dev": "tsup --watch",
     "lint": "eslint src",
     "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0 || ^19.0.0-rc",
+    "react-dom": "^18.0.0 || ^19.0.0 || ^19.0.0-rc"
   },
   "keywords": [
     "react",
@@ -46,24 +48,19 @@
     "url": "git+https://github.com/devyanshyadav/react-tablenex.git"
   },
   "license": "MIT",
-  "peerDependencies": {
-    "react": "^18.0.0 || ^19.0.0 || ^19.0.0-rc",
-    "react-dom": "^18.0.0 || ^19.0.0 || ^19.0.0-rc"
-  },
+  "type": "commonjs",
   "devDependencies": {
-    "@types/node": "^20.12.7",
-    "@types/react": "^18.3.1",
-    "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^7.5.0",
-    "@typescript-eslint/parser": "^7.5.0",
-    "@vitejs/plugin-react": "^4.2.1",
-    "eslint": "^8.56.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "typescript": "^5.4.5",
-    "vite": "^5.2.8",
-    "vite-plugin-dts": "^3.7.3",
-    "vitest": "^1.4.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "@types/node": "^22.13.14",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "autoprefixer": "^10.4.21",
+    "cpy-cli": "^5.0.0",
+    "postcss": "^8.5.3",
+    "postcss-import": "^16.1.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2"
   }
 }

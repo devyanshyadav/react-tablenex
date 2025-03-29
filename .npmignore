@@ -4,5 +4,5 @@ src
 tests
 *.test.js
 *.test.ts
-vite.config.ts
+tsup.config.ts
 *.log
