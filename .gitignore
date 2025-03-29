@@ -1,0 +1,40 @@
+# Node.js
+node_modules/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build Output
+dist/
+dist-ssr/
+
+# Vite-specific
+vite.config.ts.timestamp-*
+.vite/
+
+# TypeScript
+*.tsbuildinfo
+
+# IDEs and Editors
+.idea/
+.vscode/
+*.sublime-workspace
+
+# macOS
+.DS_Store
+
+# Testing
+coverage/
+
+# Environment Variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Temporary Files
+*.tmp
+*.bak
+*.swp

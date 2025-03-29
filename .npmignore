@@ -1,0 +1,8 @@
+src
+*.ts
+*.tsx
+tests
+*.test.js
+*.test.ts
+vite.config.ts
+*.log

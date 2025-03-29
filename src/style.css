@@ -1,0 +1,305 @@
+/* ==========================================================================
+   Base Container Styles
+   ========================================================================== */
+   .tablenex_container {
+    width: 100%;
+    max-height: 100%;
+    position: relative;
+    border: var(--tablenex-container-border);
+    border-radius: var(--tablenex-rounded);
+    background-color: var(--tablenex-bg-color);
+    border-color: var(--tablenex-border-color);
+    font-size: var(--tablenex-font-size);
+    overflow-x: auto;
+  }
+  
+  .tablenex_container > * {
+    box-sizing: border-box;
+  }
+  
+  /* ==========================================================================
+     Responsive Visibility
+     ========================================================================== */
+  .tablenex_desktop {
+    display: block;
+  }
+  
+  .tablenex_mobile-view {
+    display: none;
+  }
+  
+  @media (max-width: 768px) {
+    .tablenex_desktop {
+      display: none;
+    }
+  
+    .tablenex_mobile-view {
+      display: block;
+    }
+  }
+  
+  /* ==========================================================================
+     Table Structure and Content
+     ========================================================================== */
+  .tablenex_table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  
+  .tablenex_thead {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background-color: var(--tablenex-bg-color);
+    border-color: var(--tablenex-border-color);
+  }
+  
+  .tablenex_thead .tablenex_header-cell:last-child {
+    border-right-width: 0 !important;
+  }
+  
+  .tablenex_thead-row {
+    display: table-row;
+  }
+  
+  .tablenex_header-cell {
+    text-align: left;
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: wider;
+    z-index: 10;
+    padding: var(--tablenex-spacing);
+    border-bottom: var(--tablenex-row-border);
+    border-right: var(--tablenex-column-border);
+    background-color: var(--tablenex-bg-color);
+    border-color: var(--tablenex-border-color);
+  }
+  
+  .tablenex_header-content {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  .tablenex_text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  .tablenex_data-cell {
+    letter-spacing: wider;
+    z-index: 10;
+    padding: var(--tablenex-spacing);
+    border-bottom: var(--tablenex-row-border);
+    border-right: var(--tablenex-column-border);
+    border-color: var(--tablenex-border-color);
+  }
+  
+  .tablenex_cell-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 1rem;
+  }
+  
+  .tablenex_row {
+    transition: background-color 0.2s;
+    background-color: var(--tablenex-bg-color);
+    border-color: var(--tablenex-border-color);
+  }
+  
+  .tablenex_row .tablenex_data-cell:last-child {
+    border-right-width: 0 !important;
+  }
+  
+  .tablenex_tbody .tablenex_row:last-child .tablenex_data-cell {
+    border-bottom-width: 0 !important;
+  }
+  
+  .tablenex_row:hover, .tablenex_mobile-row:hover {
+    background-color: var(--tablenex-bg-hover) !important;
+  }
+  
+  .tablenex_empty-cell {
+    text-align: center;
+    font-weight: 500;
+    padding: var(--tablenex-spacing);
+  }
+  
+  .tablenex_mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.5rem;
+    background-color: var(--tablenex-bg-color);
+  }
+  
+  .tablenex_mobile-row {
+    border: var(--tablenex-container-border);
+    border-radius: var(--tablenex-rounded);
+    overflow: hidden;
+    transition: background-color 0.2s;
+    background-color: var(--tablenex-bg-color);
+    border-color: var(--tablenex-border-color);
+  }
+
+  
+  .tablenex_mobile-row .tablenex_mobile-cell:last-child {
+    border-bottom-width: 0 !important;
+  }
+  
+  .tablenex_mobile-row .tablenex_mobile-cell:first-child {
+    border-top-width: 0 !important;
+  }
+  
+  .tablenex_mobile-cell {
+    display: grid;
+    grid-template-columns: 35% auto;
+    gap: 0.75rem;
+    border-bottom: var(--tablenex-row-border);
+    border-color: var(--tablenex-border-color);
+    background-color: var(--tablenex-bg-color);
+  }
+  
+  .tablenex_mobile-cell-header {
+    font-weight: 500;
+    text-align: left;
+    text-transform: capitalize;
+    overflow: hidden;
+    letter-spacing: wider;
+    text-overflow: ellipsis;
+    padding: var(--tablenex-spacing);
+    border-right: var(--tablenex-column-border);
+    border-color: var(--tablenex-border-color);
+  }
+  
+  .tablenex_mobile-cell-value {
+    text-align: right;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: var(--tablenex-spacing);
+  }
+  
+  .tablenex_mobile-empty {
+    text-align: center;
+    font-weight: 500;
+    border: var(--tablenex-container-border);
+    border-radius: var(--tablenex-rounded);
+    padding: var(--tablenex-spacing);
+    background-color: var(--tablenex-bg-color);
+    border-color: var(--tablenex-border-color);
+  }
+  
+  /* ==========================================================================
+     Expanded Row Styles
+     ========================================================================== */
+  .tablenex_expanded-row {
+    width: 100%;
+    background-color: var(--tablenex-bg-color);
+  }
+  
+  .tablenex_expanded-cell {
+    padding: 0;
+    border-bottom: var(--tablenex-row-border);
+    border-color: var(--tablenex-border-color);
+  }
+  
+  .tablenex_mobile-expanded {
+    width: 100%;
+    overflow: hidden;
+    border: var(--tablenex-expanded-border);
+    border-radius: var(--tablenex-rounded);
+    border-color: var(--tablenex-border-color);
+    background-color: var(--tablenex-bg-color);
+  }
+  
+  /* ==========================================================================
+     Footer Styles
+     ========================================================================== */
+  .tablenex_footer {
+    font-weight: 500;
+    background-color: var(--tablenex-bg-color);
+    border-color: var(--tablenex-border-color);
+  }
+  
+  .tablenex_footer-row {
+    background-color: inherit;
+    border-bottom: var(--tablenex-row-border);
+    border-color: var(--tablenex-border-color);
+  }
+  
+  .tablenex_footer-cell {
+    border-top: var(--tablenex-row-border);
+    border-right: var(--tablenex-column-border);
+    padding: var(--tablenex-spacing);
+    border-color: var(--tablenex-border-color);
+  }
+  
+  .tablenex_footer-cell:last-child {
+    border-right-width: 0 !important;
+  }
+  
+  .tablenex_footer-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 1rem;
+  }
+  
+  .tablenex_mobile-footer {
+    border: var(--tablenex-row-border);
+    border-radius: var(--tablenex-rounded);
+    overflow: hidden;
+    background-color: var(--tablenex-bg-color);
+    border-color: var(--tablenex-border-color);
+  }
+  
+  .tablenex_mobile-footer-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    border-bottom: var(--tablenex-row-border);
+    border-color: var(--tablenex-border-color);
+  }
+  
+  .tablenex_mobile-footer-row:last-child {
+    border-bottom-width: 0 !important;
+  }
+  
+  .tablenex_mobile-footer-cell {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--tablenex-spacing);
+  }
+  
+  .tablenex_mobile-footer-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 1rem;
+  }
+  
+  /* ==========================================================================
+     Sticky Column Utilities
+     ========================================================================== */
+  .tablenex_cell-sticky {
+    position: sticky;
+    z-index: 10;
+  }
+  
+  .tablenex_cell-sticky-left {
+    left: 0;
+  }
+  
+  .tablenex_cell-sticky-right {
+    right: 0;
+  }
