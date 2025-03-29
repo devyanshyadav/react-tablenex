@@ -243,13 +243,3 @@ Got questions or ideas? Feel free to:
 - Reach out via [email/twitter/etc.] (add your contact if desired).
 
 Happy coding with `TableNex`!
-
----
-
-### Notes on the README:
-- **Beginner-Friendly**: Uses simple language, short examples, and avoids jargon.
-- **Practical**: Includes copy-paste-ready code with explanations.
-- **Structured**: Clear sections and a table of contents for navigation.
-- **Extensible**: Covers core features but leaves room to add more (e.g., `fixedColumns`, `expandedRows`) if you want deeper examples later.
-
-Let me know if you’d like to tweak anything—add more examples, adjust tone, or include specific details (like your GitHub repo)!
