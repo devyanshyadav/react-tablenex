@@ -32,7 +32,7 @@ Next, import the component and its CSS in your file:
 
 ```jsx
 import TableNex  from "react-tablenex";
-import "react-tablenex/dist/styles.css"; // Required for default styles
+import "react-tablenex/dist/style.css"; // Required for default styles
 ```
 
 > **Note**: The CSS file is necessary for the table to look good out of the box. You can override it with your own styles later if needed.
@@ -46,7 +46,7 @@ Here’s a simple example to get you started. This creates a basic table with so
 ```jsx
 import React from "react";
 import TableNex  from "react-tablenex";
-import "react-tablenex/dist/styles.css";
+import "react-tablenex/dist/style.css";
 
 function MyTable() {
   const data = [
@@ -124,7 +124,7 @@ A simple table with no extra features:
 
 ```jsx
 import TableNex  from "react-tablenex";
-import "react-tablenex/dist/styles.css";
+import "react-tablenex/dist/style.css";
 
 function BasicTable() {
   const data = [
@@ -145,7 +145,7 @@ Add custom headers and style a row:
 
 ```jsx
 import TableNex  from "react-tablenex";
-import "react-tablenex/dist/styles.css";
+import "react-tablenex/dist/style.css";
 
 function StyledTable() {
   const data = [
@@ -177,7 +177,7 @@ A more advanced table with responsive design and a footer:
 
 ```jsx
 import TableNex  from "react-tablenex";
-import "react-tablenex/dist/styles.css";
+import "react-tablenex/dist/style.css";
 
 function FullTable() {
   const data = [
@@ -221,7 +221,7 @@ function FullTable() {
 ## Styling
 
 `TableNex` uses CSS custom properties for easy theming. You can:
-1. **Use the Default CSS**: Import `"react-tablenex/dist/styles.css"`.
+1. **Use the Default CSS**: Import `"react-tablenex/dist/style.css"`.
 2. **Override with Props**:
    ```jsx
    <TableNex
