@@ -1,4 +1,4 @@
-import "./style.css";
+import "./styles.css";
 import { default as TableNex } from './tablenex';
 export default TableNex;
 export * from './types';

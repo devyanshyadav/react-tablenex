@@ -1,6 +1,6 @@
 {
   "name": "react-tablenex",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "A modern, customizable React table component built with TypeScript, featuring responsive design, fixed columns, and expandable rows.",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -12,9 +12,9 @@
       "require": "./dist/index.cjs",
       "types": "./dist/index.d.ts"
     },
-    "./dist/style.css": {
-      "import": "./dist/style.css",
-      "require": "./dist/style.css"
+    "./dist/styles.css": {
+      "import": "./dist/styles.css",
+      "require": "./dist/styles.css"
     }
   },
   "files": [
