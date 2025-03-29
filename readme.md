@@ -31,7 +31,7 @@ npm install react-tablenex
 Next, import the component and its CSS in your file:
 
 ```jsx
-import { TableNex } from "react-tablenex";
+import TableNex  from "react-tablenex";
 import "react-tablenex/dist/style.css"; // Required for default styles
 ```
 
@@ -45,7 +45,7 @@ Here’s a simple example to get you started. This creates a basic table with so
 
 ```jsx
 import React from "react";
-import { TableNex } from "react-tablenex";
+import TableNex  from "react-tablenex";
 import "react-tablenex/dist/style.css";
 
 function MyTable() {
@@ -123,7 +123,7 @@ Save this in a `.jsx` file, run your app, and you’ll see a table!
 A simple table with no extra features:
 
 ```jsx
-import { TableNex } from "react-tablenex";
+import TableNex  from "react-tablenex";
 import "react-tablenex/dist/style.css";
 
 function BasicTable() {
@@ -144,7 +144,7 @@ This will auto-detect `id`, `name`, and `job` as columns if you don’t provide 
 Add custom headers and style a row:
 
 ```jsx
-import { TableNex } from "react-tablenex";
+import TableNex  from "react-tablenex";
 import "react-tablenex/dist/style.css";
 
 function StyledTable() {
@@ -176,7 +176,7 @@ function StyledTable() {
 A more advanced table with responsive design and a footer:
 
 ```jsx
-import { TableNex } from "react-tablenex";
+import TableNex  from "react-tablenex";
 import "react-tablenex/dist/style.css";
 
 function FullTable() {
