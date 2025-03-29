@@ -7,26 +7,26 @@ export default defineConfig({
   plugins: [
     react(),
     dts({
-      insertTypesEntry: true, // Adds export to index.d.ts
+      insertTypesEntry: true, 
       include: ['src'],
-      outDir: 'dist', // Ensure types go to dist
+      outDir: 'dist',
     }),
   ],
   build: {
-    outDir: 'dist', // Explicitly set output directory
+    outDir: 'dist',
     lib: {
       entry: path.resolve(__dirname, 'src/index.tsx'),
-      name: 'ReactTableNex', // Optional, only needed for UMD (can remove if not using UMD)
-      formats: ['es', 'cjs'], // Match ESM (.mjs) and CommonJS (.cjs)
-      fileName: (format) => `index.${format === 'es' ? 'mjs' : 'cjs'}`, // Match package.json
+      name: 'ReactTableNex',
+      formats: ['es', 'cjs'],
+      fileName: (format) => `index.${format === 'es' ? 'mjs' : 'cjs'}`,
     },
     rollupOptions: {
       external: ['react', 'react-dom'], // Peer dependencies
       output: {
         // Handle CSS and other assets
-        assetFileNames: '[name].[ext]', // Outputs styles.css as-is
+        assetFileNames: '[name].[ext]', 
       },
     },
-    sourcemap: true, // Optional: for debugging
+    sourcemap: true, 
   },
 });
