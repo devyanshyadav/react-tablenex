@@ -98,7 +98,7 @@ Save this in a `.jsx` file, run your app, and you’ll see a table!
   PRIMARY: "#ffffff",
   SECONDARY: "#f9f8fd",
   ACCENT: "#f9f8fd",
-  BORDER_ACCENT: "#f2f2f2"
+  BORDER: "#f2f2f2"
 }
 ```
 
@@ -226,7 +226,7 @@ function FullTable() {
    ```jsx
    <TableNex
      data={data}
-     colorScheme={{ PRIMARY: "#f0f0f0", BORDER_ACCENT: "#000" }}
+     colorScheme={{ PRIMARY: "#f0f0f0", BORDER: "#000" }}
      styles={{ fontSize: "1rem", rowBorder: "lg" }}
    />
    ```

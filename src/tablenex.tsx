@@ -12,7 +12,7 @@ const DEFAULT_COLOR_SCHEME: ColorScheme = {
   PRIMARY: "#ffffff",
   SECONDARY: "#f9f8fd",
   ACCENT: "#f9f8fd",
-  BORDER_ACCENT: "#f2f2f2",
+  BORDER: "#f2f2f2",
 };
 
 const DEFAULT_STYLES: TableStyles = {
@@ -103,7 +103,11 @@ const TableNex: React.FC<TableProps> = ({
   const effectiveKeyField = keyField || "id";
   const normalizedKeyField = normalizeKey(effectiveKeyField);
 
-  if (isDevelopment && !normalizedHeaders.includes(normalizedKeyField)) {
+  if (
+    isDevelopment &&
+    !normalizedHeaders.includes(normalizedKeyField) &&
+    columns.length
+  ) {
     throw new Error(
       `For keys, there should be one column with 'keyField' specified as "${effectiveKeyField}" or an "id" column present. Available cells: ${cellHeaders.join(
         ", "
@@ -225,7 +229,7 @@ const TableNex: React.FC<TableProps> = ({
           ),
           "--tablenex-spacing": getSpacingValue(effectiveStyles.spacing),
           "--tablenex-bg-color": effectiveColorScheme.ACCENT,
-          "--tablenex-border-color": effectiveColorScheme.BORDER_ACCENT,
+          "--tablenex-border-color": effectiveColorScheme.BORDER,
           width,
           maxWidth: width === "auto" ? "none" : width,
           ...cellStyle,
@@ -283,7 +287,7 @@ const TableNex: React.FC<TableProps> = ({
           "--tablenex-spacing": getSpacingValue(effectiveStyles.spacing),
           width,
           maxWidth: width === "auto" ? "none" : width,
-          borderColor: effectiveColorScheme.BORDER_ACCENT,
+          borderColor: effectiveColorScheme.BORDER,
           backgroundColor: isFixed ? effectiveColorScheme.SECONDARY : undefined,
           ...columnStyle,
         }}
@@ -298,7 +302,7 @@ const TableNex: React.FC<TableProps> = ({
       className="tablenex_footer"
       style={{
         "--tablenex-bg-color": effectiveColorScheme.PRIMARY,
-        "--tablenex-border-color": effectiveColorScheme.BORDER_ACCENT,
+        "--tablenex-border-color": effectiveColorScheme.BORDER,
       }}
     >
       {footer.map((footerRow, rowIndex) => (
@@ -311,7 +315,7 @@ const TableNex: React.FC<TableProps> = ({
             ),
             "--tablenex-row-border": getBorderValue(effectiveStyles.rowBorder),
             "--tablenex-spacing": getSpacingValue(effectiveStyles.spacing),
-            "--tablenex-border-color": effectiveColorScheme.BORDER_ACCENT,
+            "--tablenex-border-color": effectiveColorScheme.BORDER,
             ...footerRow.style,
           }}
         >
@@ -321,7 +325,7 @@ const TableNex: React.FC<TableProps> = ({
               colSpan={cell.colSpan || 1}
               className={`tablenex_footer-cell ${cell.className || ""}`}
               style={{
-                "--tablenex-border-color": effectiveColorScheme.BORDER_ACCENT,
+                "--tablenex-border-color": effectiveColorScheme.BORDER,
                 ...cell.style,
               }}
             >
@@ -339,7 +343,7 @@ const TableNex: React.FC<TableProps> = ({
         className="tablenex_thead"
         style={{
           "--tablenex-bg-color": effectiveColorScheme.PRIMARY,
-          "--tablenex-border-color": effectiveColorScheme.BORDER_ACCENT,
+          "--tablenex-border-color": effectiveColorScheme.BORDER,
         }}
       >
         <tr className="tablenex_thead-row">
@@ -370,8 +374,7 @@ const TableNex: React.FC<TableProps> = ({
                       effectiveStyles.rowBorder
                     ),
                     "--tablenex-bg-color": effectiveColorScheme.PRIMARY,
-                    "--tablenex-border-color":
-                      effectiveColorScheme.BORDER_ACCENT,
+                    "--tablenex-border-color": effectiveColorScheme.BORDER,
                     ...style,
                   }}
                   role="row"
@@ -401,8 +404,7 @@ const TableNex: React.FC<TableProps> = ({
                       colSpan={cellHeaders.length}
                       className="tablenex_expanded-cell"
                       style={{
-                        "--tablenex-border-color":
-                          effectiveColorScheme.BORDER_ACCENT,
+                        "--tablenex-border-color": effectiveColorScheme.BORDER,
                         padding: 0,
                       }}
                     >
@@ -438,7 +440,7 @@ const TableNex: React.FC<TableProps> = ({
         "--tablenex-row-border": getBorderValue(effectiveStyles.rowBorder),
         "--tablenex-rounded": getRoundedValue(effectiveStyles.rounded),
         "--tablenex-bg-color": effectiveColorScheme.PRIMARY,
-        "--tablenex-border-color": effectiveColorScheme.BORDER_ACCENT,
+        "--tablenex-border-color": effectiveColorScheme.BORDER,
       }}
     >
       {footer.map((footerRow, rowIndex) => (
@@ -447,7 +449,7 @@ const TableNex: React.FC<TableProps> = ({
           className={`tablenex_mobile-footer-row ${footerRow.className || ""}`}
           style={{
             "--tablenex-row-border": getBorderValue(effectiveStyles.rowBorder),
-            "--tablenex-border-color": effectiveColorScheme.BORDER_ACCENT,
+            "--tablenex-border-color": effectiveColorScheme.BORDER,
             ...footerRow.style,
           }}
         >
@@ -501,7 +503,7 @@ const TableNex: React.FC<TableProps> = ({
                   ),
                   "--tablenex-bg-color": effectiveColorScheme.PRIMARY,
                   "--tablenex-bg-hover": effectiveColorScheme.SECONDARY,
-                  "--tablenex-border-color": effectiveColorScheme.BORDER_ACCENT,
+                  "--tablenex-border-color": effectiveColorScheme.BORDER,
                   ...style,
                 }}
                 role="row"
@@ -528,11 +530,10 @@ const TableNex: React.FC<TableProps> = ({
                         "--tablenex-row-border": getBorderValue(
                           effectiveStyles.rowBorder
                         ),
-                        "--tablenex-border-color":
-                          effectiveColorScheme.BORDER_ACCENT,
+                        "--tablenex-border-color": effectiveColorScheme.BORDER,
                         borderBlock:
                           normalizeKey(header) === normalizedKeyField
-                            ? `2px solid ${effectiveColorScheme.BORDER_ACCENT}`
+                            ? `2px solid ${effectiveColorScheme.BORDER}`
                             : undefined,
                         "--tablenex-bg-color":
                           normalizeKey(header) === normalizedKeyField
@@ -550,7 +551,7 @@ const TableNex: React.FC<TableProps> = ({
                             effectiveStyles.spacing
                           ),
                           "--tablenex-border-color":
-                            effectiveColorScheme.BORDER_ACCENT,
+                            effectiveColorScheme.BORDER,
                           ...cellStyle,
                           ...columnStyle,
                         }}
@@ -585,8 +586,7 @@ const TableNex: React.FC<TableProps> = ({
                     "--tablenex-expanded-border": getBorderValue(
                       effectiveStyles.rowBorder
                     ),
-                    "--tablenex-border-color":
-                      effectiveColorScheme.BORDER_ACCENT,
+                    "--tablenex-border-color": effectiveColorScheme.BORDER,
                     "--tablenex-bg-color": effectiveColorScheme.PRIMARY,
                     width: "100%",
                   }}
@@ -606,7 +606,7 @@ const TableNex: React.FC<TableProps> = ({
             ),
             "--tablenex-rounded": getRoundedValue(effectiveStyles.rounded),
             "--tablenex-spacing": getSpacingValue(effectiveStyles.spacing),
-            "--tablenex-border-color": effectiveColorScheme.BORDER_ACCENT,
+            "--tablenex-border-color": effectiveColorScheme.BORDER,
             "--tablenex-bg-color": effectiveColorScheme.PRIMARY,
           }}
           role="status"
@@ -626,7 +626,7 @@ const TableNex: React.FC<TableProps> = ({
           effectiveStyles.rowBorder
         ),
         "--tablenex-rounded": getRoundedValue(effectiveStyles.rounded),
-        "--tablenex-border-color": effectiveColorScheme.BORDER_ACCENT,
+        "--tablenex-border-color": effectiveColorScheme.BORDER,
         "--tablenex-bg-color": effectiveColorScheme.PRIMARY,
         "--tablenex-font-size": effectiveStyles.fontSize || "0.9rem", // Fallback to default
       }}

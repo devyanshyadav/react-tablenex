@@ -78,7 +78,7 @@ export interface ColorScheme {
   PRIMARY: string; // Main background color
   SECONDARY: string; // Secondary background (e.g., fixed columns)
   ACCENT: string; // Highlight color (e.g., headers)
-  BORDER_ACCENT: string; // Border color
+  BORDER: string; // Border color
 }
 
 /**
