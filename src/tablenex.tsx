@@ -55,11 +55,11 @@ const getRoundedValue = (value: string | undefined): string => {
 const getSpacingValue = (value: string | undefined): string => {
   const sizes: Record<string, string> = {
     sm: "6px",
-    md: "10px",
-    lg: "14px",
+    md: "12px",
+    lg: "16px",
     xl: "18px",
   };
-  return value && sizes[value] ? sizes[value] : value || "10px";
+  return value && sizes[value] ? sizes[value] : value || "12px";
 };
 
 const getBorderValue = (value: string | undefined): string => {
