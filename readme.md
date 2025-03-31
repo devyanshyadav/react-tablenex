@@ -113,7 +113,7 @@ Save this in a `.jsx` file, run your app, and you’ll see a table!
 }
 ```
 
-> **Tip**: Use `"sm"`, `"md"`, `"lg"`, or `"none"` for `rounded`, `spacing`, `columnBorder`, and `rowBorder`.
+> **Tip**: Use `"sm"`, `"md"`, `"lg"`, `"xl"`, or `"none"` for `rounded`, `spacing`, `columnBorder`, and `rowBorder`.
 
 ---
 
@@ -235,11 +235,4 @@ function FullTable() {
 Check your browser’s developer tools to see all available classes!
 
 ---
-
-## Support
-
-Got questions or ideas? Feel free to:
-- Open an issue on [GitHub](https://github.com/yourusername/react-tablenex) (replace with your repo link).
-- Reach out via [email/twitter/etc.] (add your contact if desired).
-
 Happy coding with `TableNex`!

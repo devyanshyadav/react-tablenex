@@ -1,6 +1,6 @@
 {
   "name": "react-tablenex",
-  "version": "1.9.0",
+  "version": "2.0.0",
   "description": "A React component library",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

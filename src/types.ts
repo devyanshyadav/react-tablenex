@@ -84,7 +84,7 @@ export interface ColorScheme {
 /**
  * Size options for styling properties.
  */
-export type SizeOption = "none" | "sm" | "md" | "lg";
+export type SizeOption = "none" | "sm" | "md" | "lg" | "xl";
 
 /**
  * Styling options for the table's appearance.

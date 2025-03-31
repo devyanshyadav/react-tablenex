@@ -43,13 +43,23 @@ const extractCellText = (cell: TableCell | string): string => {
 const normalizeKey = (key: string): string => key.toLowerCase().trim();
 
 const getRoundedValue = (value: string | undefined): string => {
-  const sizes: Record<string, string> = { sm: "4px", md: "8px", lg: "12px" };
-  return value && sizes[value] ? sizes[value] : value || "4px";
+  const sizes: Record<string, string> = {
+    sm: "6px",
+    md: "8px",
+    lg: "12px",
+    xl: "16px",
+  };
+  return value && sizes[value] ? sizes[value] : value || "6px";
 };
 
 const getSpacingValue = (value: string | undefined): string => {
-  const sizes: Record<string, string> = { sm: "8px", md: "16px", lg: "24px" };
-  return value && sizes[value] ? sizes[value] : value || "16px";
+  const sizes: Record<string, string> = {
+    sm: "6px",
+    md: "10px",
+    lg: "14px",
+    xl: "18px",
+  };
+  return value && sizes[value] ? sizes[value] : value || "10px";
 };
 
 const getBorderValue = (value: string | undefined): string => {
@@ -57,6 +67,8 @@ const getBorderValue = (value: string | undefined): string => {
     none: "0",
     sm: "1px solid",
     md: "2px solid",
+    lg: "3px solid",
+    xl: "4px solid",
   };
   return value && sizes[value] ? sizes[value] : value || "1px solid";
 };
@@ -238,7 +250,7 @@ const TableNex: React.FC<TableProps> = ({
         aria-label={cellText}
       >
         <div className="tablenex_header-content">
-          <span className="tablenex_text-truncate">{displayContent}</span>
+          <div className="tablenex_text-truncate">{displayContent}</div>
         </div>
       </th>
     );
@@ -565,6 +577,7 @@ const TableNex: React.FC<TableProps> = ({
                           "--tablenex-spacing": getSpacingValue(
                             effectiveStyles.spacing
                           ),
+                          ...columnStyle,
                         }}
                       >
                         {cellDef?.render
