@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description:
       "TableNex: a sleek React table component with easy setup, customization, and responsiveness. Built for developers with TypeScript.",
     images: ["/public/xbanner.jpg"],
-    creator: "@devyanshyadavv",
+    creator: "@DevyanshYadavv",
   },
 };
 

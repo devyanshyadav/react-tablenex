@@ -15,7 +15,7 @@ const Header = () => {
         </div>
         <div className="text-xl *:px-3 flex items-center">
           <Link
-            href="https://github.com/devyansh-yadav/react-tablenex"
+            href="https://github.com/devyanshyadav/react-tablenex"
             className=" border-border-accent border-r block"
           >
             <FaGithub />
