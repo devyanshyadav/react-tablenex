@@ -43,6 +43,7 @@
     "customizable"
   ],
   "author": "Devyansh Yadav <devyanshdeveloper@gmail.com>",
+  "homepage": "https://tablenex.devvarena.com",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/devyanshyadav/react-tablenex.git"
