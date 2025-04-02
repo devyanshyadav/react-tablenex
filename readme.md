@@ -1,6 +1,6 @@
 # TableNex - A Next-Gen React Table Component
 
-![TableNex Banner](/public/banner.png)
+![TableNex Banner](/website//public//banner.png)
 
 Say goodbye to the hassle of `<tr>` and `<td>` chaos—TableNex offers an effortless, customizable, and responsive solution for modern tables. Built with React and TypeScript, it’s perfect for lists, dashboards, or complex datasets.
 
@@ -142,12 +142,14 @@ function FullTable() {
     { accessor: "employeeId", header: "Employee ID" },
     { accessor: "name", header: "Employee" },
     { accessor: "salary", header: "Salary ($)" },
+    { accessor: "location", header: "Location" },
+    { accessor: "country", header: "Country" },
   ];
 
   const footer = [
     {
       cells: [
-        { content: "Total", style: { fontWeight: "bold" }, colSpan: 2 },
+        { content: "Total", style: { fontWeight: "bold" }, colSpan: 4},
         { content: "$170,000" },
       ],
     },
@@ -160,7 +162,7 @@ function FullTable() {
       columns={columns}
       footer={footer}
       responsive={true}
-      styles={{ rounded: "lg", spacing: "lg" }}
+      styles={{ rounded: "lg", spacing: "lg", columnBorder: "sm" }}
     />
   );
 }
@@ -202,6 +204,6 @@ Check your browser’s developer tools to see all available classes!
 
 ## Learn More
 
-## Check the [full documentation](http://tablenex.devvarena.com/docs/introduction) for advanced usage and TypeScript details.
+### Check the [full documentation](http://tablenex.devvarena.com/docs/introduction) for advanced usage and TypeScript details.
 
 Happy coding with `TableNex`!
