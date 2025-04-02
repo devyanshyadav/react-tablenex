@@ -7,28 +7,28 @@ import CopyClip from "../global-cmp/copy-clip";
 
 const tableData = [
   {
-    courseId: "CRS-001",
+    id: "CRS-001",
     course: "Introduction to Python",
     enrolled: 45,
     instructor: "Dr. Emily Stone",
     startDate: "2025-05-01",
   },
   {
-    courseId: "CRS-002",
+    id: "CRS-002",
     course: "Advanced Data Science",
     enrolled: 28,
     instructor: "Prof. Mark Rivera",
     startDate: "2025-05-03",
   },
   {
-    courseId: "CRS-003",
+    id: "CRS-003",
     course: "Web Development Basics",
     enrolled: 60,
     instructor: "Sarah Kim",
     startDate: "2025-04-29",
   },
   {
-    courseId: "CRS-004",
+    id: "CRS-004",
     course: "Machine Learning Fundamentals",
     enrolled: 35,
     instructor: "Dr. Alan Chen",
@@ -41,10 +41,10 @@ const usageCode = `
    import "react-tablenex/style.css";
 
    const tableData = [
-     { courseId: "CRS-001", course: "Introduction to Python", enrolled: 45, instructor: "Dr. Emily Stone", startDate: "2025-05-01" },
-     { courseId: "CRS-002", course: "Advanced Data Science", enrolled: 28, instructor: "Prof. Mark Rivera", startDate: "2025-05-03" },
-     { courseId: "CRS-003", course: "Web Development Basics", enrolled: 60, instructor: "Sarah Kim", startDate: "2025-04-29" },
-     { courseId: "CRS-004", course: "Machine Learning Fundamentals", enrolled: 35, instructor: "Dr. Alan Chen", startDate: "2025-05-05" },
+     { id: "CRS-001", course: "Introduction to Python", enrolled: 45, instructor: "Dr. Emily Stone", startDate: "2025-05-01" },
+     { id: "CRS-002", course: "Advanced Data Science", enrolled: 28, instructor: "Prof. Mark Rivera", startDate: "2025-05-03" },
+     { id: "CRS-003", course: "Web Development Basics", enrolled: 60, instructor: "Sarah Kim", startDate: "2025-04-29" },
+     { id: "CRS-004", course: "Machine Learning Fundamentals", enrolled: 35, instructor: "Dr. Alan Chen", startDate: "2025-05-05" },
    ];
 
    const UsageCode = () => {
