@@ -30,7 +30,6 @@ Next, import the component and its CSS in your file:
 Here’s a simple example to get you started. This creates a basic table with some employee data:
 
 ```jsx
-import React from "react";
 import TableNex from "react-tablenex";
 import "react-tablenex/style.css";
 
@@ -166,6 +165,8 @@ function FullTable() {
     />
   );
 }
+
+export default FullTable;
 ```
 
 - `responsive={true}` makes it mobile-friendly.
