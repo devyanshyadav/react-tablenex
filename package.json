@@ -1,7 +1,7 @@
 {
   "name": "react-tablenex",
   "version": "2.2.0",
-  "description": "A React component library",
+  "description": "A next-gen React table component that simplifies data display",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
