@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "../globals.css";
 import Header from "@/components/global-cmp/header";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -66,6 +67,7 @@ export default function RootLayout({
         <main className="*:max-w-6xl *:mx-auto *:w-full flex-grow">
           {children}
         </main>
+        <GoogleAnalytics gaId={process.env.GA_ID as string} />
       </body>
     </html>
   );
