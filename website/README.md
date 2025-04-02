@@ -1,6 +1,6 @@
 # TableNex
 
-![TableNex Banner](/website//public//banner.png)
+![TableNex Banner](/public/banner.png)
 
 **TableNex** is a next-generation React table component that simplifies data display. Say goodbye to the hassle of `<tr>` and `<td>` chaos—TableNex offers an effortless, customizable, and responsive solution for modern tables. Built with React and TypeScript, it’s perfect for lists, dashboards, or complex datasets.
 
