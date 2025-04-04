@@ -68,12 +68,6 @@ const Usage = () => {
       <div className="bg-primary p-2 md:p-10 grid place-items-center bg-gradient-to-tr from-primary to-secondary">
         <TableNex
           data={tableData}
-          colorScheme={{
-            PRIMARY: "var(--primary)",
-            SECONDARY: "var(--secondary)",
-            ACCENT: "var(--accent)",
-            BORDER: "var(--border-accent)",
-          }}
         />
         <Link
           href="/docs/examples"

@@ -718,12 +718,6 @@ const SearchTable = () => {
         data={filteredData}
         columns={columns}
         keyField="appId"
-        colorScheme={{
-          PRIMARY: "var(--primary)",
-          SECONDARY: "var(--secondary)",
-          ACCENT: "var(--accent)",
-          BORDER: "var(--border-accent)",
-        }}
         noDataMessage="No matching applications found"
       />
     </div>
