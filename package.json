@@ -63,8 +63,5 @@
     "rimraf": "^6.0.1",
     "tsup": "^8.4.0",
     "typescript": "^5.8.2"
-  },
-  "dependencies": {
-    "react-tablenex": "^2.6.0"
   }
 }
