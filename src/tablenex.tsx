@@ -9,10 +9,10 @@ declare module "react" {
 
 // Default Color Scheme and Styles remain unchanged
 const DEFAULT_COLOR_SCHEME: ColorScheme = {
-  PRIMARY: "#ffffff",
-  SECONDARY: "#f9f8fd",
-  ACCENT: "#f9f8fd",
-  BORDER: "#f2f2f2",
+  PRIMARY: "transparent",
+  SECONDARY: "#aac6f73b",
+  ACCENT: "#aac6f73b",
+  BORDER: "#aac6f757",
 };
 
 const DEFAULT_STYLES: TableStyles = {

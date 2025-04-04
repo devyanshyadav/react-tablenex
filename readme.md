@@ -90,10 +90,10 @@ Save this in a `.jsx` or `.tsx` file, run your app, and you’ll see a table!
 
 ```json
 {
-  "PRIMARY": "#ffffff",
-  "SECONDARY": "#f9f8fd",
-  "ACCENT": "#f9f8fd",
-  "BORDER": "#f2f2f2"
+  "PRIMARY": "transparent",
+  "SECONDARY": "#aac6f73b",
+  "ACCENT": "#aac6f73b",
+  "BORDER": "#aac6f757",
 }
 ```
 
