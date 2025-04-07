@@ -82,7 +82,7 @@ const TableNex: React.FC<TableProps> = ({
   styledColumns = [],
   expandedRows = [],
   footer = [],
-  keyField,
+  keyField = { keyId: "id", isVisible: true },
   noDataMessage = "No data found",
   colorScheme = {},
   responsive = false,
@@ -112,8 +112,12 @@ const TableNex: React.FC<TableProps> = ({
     () => cellHeaders.map(normalizeKey),
     [cellHeaders]
   );
-  const effectiveKeyField = keyField || "id";
-  const normalizedKeyField = normalizeKey(effectiveKeyField);
+  const legacyKeyField =
+    typeof keyField === "string"
+      ? { keyId: keyField, isVisible: true }
+      : keyField;
+  const { keyId, isVisible } = legacyKeyField;
+  const normalizedKeyField = normalizeKey(keyId);
 
   if (
     isDevelopment &&
@@ -121,7 +125,7 @@ const TableNex: React.FC<TableProps> = ({
     columns.length
   ) {
     throw new Error(
-      `For keys, there should be one column with 'keyField' specified as "${effectiveKeyField}" or an "id" column present. Available cells: ${cellHeaders.join(
+      `For keys, there should be one column with 'keyId in KeyField Prop' specified as "${keyId}" or an "id" column present. Available cells: ${cellHeaders.join(
         ", "
       )}.`
     );
@@ -167,7 +171,7 @@ const TableNex: React.FC<TableProps> = ({
     );
     if (invalidStyledRows.length) {
       throw new Error(
-        `The following keyValues in styledRows do not match any row's "${effectiveKeyField}" value: ${invalidStyledRows
+        `The following keyValues in styledRows do not match any row's "${keyId}" value: ${invalidStyledRows
           .map((sr) => `"${sr.keyValue}"`)
           .join(", ")}. Available key values in data: ${keyValuesInData
           .filter(Boolean)
@@ -189,7 +193,7 @@ const TableNex: React.FC<TableProps> = ({
     );
     if (duplicates.length) {
       throw new Error(
-        `Duplicate values found for "${effectiveKeyField}" in rows: ${duplicates.join(
+        `Duplicate values found for "${keyId}" in rows: ${duplicates.join(
           ", "
         )}. Each row must have a unique key value.`
       );
@@ -221,7 +225,7 @@ const TableNex: React.FC<TableProps> = ({
     const isLastFixed = isFixed && index === cellHeaders.length - 1;
     const cellStyle = typeof cell !== "string" ? cell.style : undefined;
     const cellClassName = typeof cell !== "string" ? cell.className || "" : "";
-
+    if (keyId === cellText && !isVisible) return null;
     return (
       <th
         key={cellText}
@@ -279,9 +283,10 @@ const TableNex: React.FC<TableProps> = ({
     const { className: columnClassName, style: columnStyle } =
       getCellStyles(header);
 
+    if (keyId === header && !isVisible) return null;
     return (
       <td
-        key={`${row[effectiveKeyField] || colIndex}-${header}`}
+        key={`${row[keyId] || colIndex}-${header}`}
         className={`tablenex_data-cell ${
           isFixed ? "tablenex_cell-sticky" : ""
         } ${
@@ -527,15 +532,18 @@ const TableNex: React.FC<TableProps> = ({
                   const value = rowKey ? row[rowKey] : undefined;
                   const { className: columnClassName, style: columnStyle } =
                     getCellStyles(header);
+
                   const cellDef = columns.find(
                     (c) => extractCellText(c) === header
                   );
                   const cellStyle = cellDef?.style;
                   const cellClassName = cellDef?.className || "";
+                  const displayContent = cellDef?.header || header; // Using custom header if provided
 
+                  if (keyId === header && !isVisible) return null;
                   return (
                     <div
-                      key={`${row[effectiveKeyField] || rowIndex}-${header}`}
+                      key={`${row[keyId] || rowIndex}-${header}`}
                       className="tablenex_mobile-cell"
                       role="cell"
                       style={{
@@ -568,7 +576,7 @@ const TableNex: React.FC<TableProps> = ({
                           ...columnStyle,
                         }}
                       >
-                        {header}
+                        {displayContent}
                         {styles.columnBorder === "none" && ": "}
                       </div>
                       <div

@@ -108,7 +108,7 @@ export interface TableProps {
   styledColumns?: StyledColumn[]; // Custom styles for specific columns
   expandedRows?: ExpandedRow[]; // Expandable sub-rows
   footer?: FooterRow[]; // Footer rows with cells
-  keyField?: string; // Unique key field for rows
+  keyField?: string | { keyId: string; isVisible: boolean }; // Unique key field for rows
   noDataMessage?: React.ReactNode; // Message when no data is present
   colorScheme?: Partial<ColorScheme>; // Optional color overrides
   responsive?: boolean; // Enable responsive layout
