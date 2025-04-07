@@ -75,12 +75,12 @@ Save this in a `.jsx` or `.tsx` file, run your app, and you’ll see a table!
 | --------------- | ----------------------- | ----------------- | --------------------------------------------------------------------------- |
 | `data`          | `Object[]`              | Required          | Your table data as an array of objects (e.g., `[{ id: 1, name: "John" }]`). |
 | `columns`       | `TableColumn[]`         | `[]`              | Defines table columns (e.g., `{ accessor: "name", header: "Name" }`).       |
+| `keyField`      | `string \| { keyId: string; isVisible: boolean }` | `{ keyId: "id", isVisible: true }` | The unique field in `data` (e.g., `"id"`) or an object with `keyId` (the key) and `isVisible` (whether to show the column) for row identification. |
 | `fixedColumns`  | `string[]`              | `[]`              | Columns to "stick" (stay visible when scrolling).                           |
 | `styledRows`    | `StyledRow[]`           | `[]`              | Custom styles for specific rows by their key value.                         |
 | `styledColumns` | `StyledColumn[]`        | `[]`              | Custom styles for specific columns by their accessor.                       |
 | `expandedRows`  | `ExpandedRow[]`         | `[]`              | Extra rows that expand below specific rows.                                 |
 | `footer`        | `FooterRow[]`           | `[]`              | Rows to show at the bottom of the table.                                    |
-| `keyField`      | `string`                | `"id"`            | The unique field in `data` (e.g., `"id"`) for row identification.           |
 | `noDataMessage` | `string` or `ReactNode` | `"No data found"` | What to show if `data` is empty.                                            |
 | `colorScheme`   | `Partial<ColorScheme>`  | See below         | Colors for the table (e.g., `{ PRIMARY: "#fff" }`).                         |
 | `responsive`    | `boolean`               | `false`           | Makes the table adapt to mobile screens.                                    |
